@@ -8,7 +8,8 @@
 # Copyright (C) 2018 Olof Sjödin <me@olofsjodin.se>
 # Edits are licensed under the GPL version 3
 #
-# Added support for colored icons.
+# Added support for colored icons and extended fontawesome support
+# with different battery level icons.
 
 
 import re

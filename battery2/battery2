@@ -74,10 +74,25 @@ else:
         FA_PLUG = "<span color='" + PLUG_COLOR + "'>" + FA_PLUG + "</span>"
 
     # stands for using battery
-    FA_BATTERY = "<span font='FontAwesome'>\uf240</span>"
-    if "BATTERY_COLOR" in locals():
-        FA_BATTERY = "<span color='" + BATTERY_COLOR + "'>" + FA_BATTERY + "</span>"
+    FA_BATTERY_FULL = "<span font='FontAwesome'>\uf240</span>"
+    FA_BATTERY_THREE_QUARTERS = "<span font='FontAwesome'>\uf241</span>"
+    FA_BATTERY_TWO_QUARTERS = "<span font='FontAwesome'>\uf242</span>"
+    FA_BATTERY_ONE_QUARTERS = "<span font='FontAwesome'>\uf243</span>"
+    FA_BATTERY_EMPTY = "<span font='FontAwesome'>\uf244</span>"
 
+    FA_BATTERY = ""
+    
+    if percentleft <= 100:
+        FA_BATTERY = add_color('cyan', FA_BATTERY_FULL)
+    if percentleft <= 80:
+        FA_BATTERY = add_color('cyan', FA_BATTERY_THREE_QUARTERS)
+    if percentleft <= 60:
+        FA_BATTERY = add_color('cyan', FA_BATTERY_TWO_QUARTERS)
+    if percentleft <= 30:
+        FA_BATTERY = add_color('cyan', FA_BATTERY_ONE_QUARTERS)
+    if percentleft <= 15:
+        FA_BATTERY = add_color('red', FA_BATTERY_EMPTY)
+        
     # stands for unknown status of battery
     FA_QUESTION = "<span font='FontAwesome'>\uf128</span>"
     if "UNKNOWN_STATUS_COLOR" in locals():
